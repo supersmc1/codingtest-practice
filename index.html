@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <input class="cpnumber" type="text" maxlength="11">
+  </div>
+</body>
+<script>
+  //핸드폰번호 유효한지 체크함수
+
+  /*1.핸드폰 번호를 입력하면
+      (1)010->검사하는함수 만들어야한다
+      (2)010-123-4567,010-1234-5678 중 가운데 자리가 3자리, 4자리수
+    2.- 적절한 위치에 붙어야한다 
+    3.사용자가 - 쓰면 지워져야한다
+  */
+
+  //010부터 식별하는 함수를 만들어야한다 
+  //숫자를 입력했을때 앞3자리 010 아니면 틀렸다고 해야한다
+  //앞3자리를 어떻게 식별할까
+
+
+  const cpnumber = document.querySelector('.cpnumber')
+  let numberarr = [
+    0,1,2,3,4,5,6,7,8,9
+  ]
+  let firstnumber = '010'
+  let basicnumber = cpnumber.value.length = 3
+  
+  
+  cpnumber.addEventListener('change',function(){
+    let inconsole = cpnumber.value
+    let arrs = Array.from(inconsole)
+    console.log(arrs)
+    if(inconsole[0] === 0){
+      console.log('0맞아')
+    }else{
+      console.log('0아니야')
+    }
+    if(cpnumber.value === '010'){
+      console.log('010 맞아')
+    }else{
+      console.log('010 아니야')
+    }
+    console.log(cpnumber.value)
+    console.log(cpnumber.value.length)
+  })
+</script>
+</html>

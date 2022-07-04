@@ -25,7 +25,6 @@
   //숫자를 입력했을때 앞3자리 010 아니면 틀렸다고 해야한다
   //앞3자리를 어떻게 식별할까
 
-
   const cpnumber = document.querySelector('.cpnumber')
   let numberarr = [
     0,1,2,3,4,5,6,7,8,9
@@ -33,23 +32,31 @@
   let firstnumber = '010'
   let basicnumber = cpnumber.value.length = 3
   
-  
   cpnumber.addEventListener('change',function(){
     let inconsole = cpnumber.value
     let arrs = Array.from(inconsole)
     console.log(arrs)
-    if(inconsole[0] === 0){
-      console.log('0맞아')
-    }else{
-      console.log('0아니야')
-    }
     if(cpnumber.value === '010'){
       console.log('010 맞아')
     }else{
       console.log('010 아니야')
     }
-    console.log(cpnumber.value)
-    console.log(cpnumber.value.length)
+    if(inconsole > 3){
+      arrs.splice(3,0,'-')
+      arrs.join('')
+    }
+    if(inconsole > 8){
+      arrs.splice(8,0,'-')
+      console.log(arrs)
+      arrs.join('')
+      console.log(arrs.join(''))
+    }
+    console.log(arrs)
   })
+
+
+
+
+
 </script>
 </html>
